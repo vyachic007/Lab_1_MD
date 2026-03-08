@@ -1,5 +1,6 @@
 package com.example.lab_1;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +15,14 @@ public class SwitchCaseActivity extends Activity {
 
     private static final String TAG = "LIFECYCLE";
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "SwitchCaseActivity: onCreate");
+
+
+        setContentView(R.layout.activity_switchcase);
 
         String text = getIntent().getStringExtra("text");
         if (text == null) {
@@ -28,34 +33,19 @@ public class SwitchCaseActivity extends Activity {
         String upper = text.toUpperCase();
         Log.d(TAG, "SwitchCaseActivity: Текст в верхнем регистре=" + upper);
 
-        LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setGravity(android.view.Gravity.CENTER);
+        TextView originalText = findViewById(R.id.originalText);
+        TextView upperText = findViewById(R.id.upperText);
+        Button backBtn = findViewById(R.id.backBtn);
 
-        layout.addView(createTextView("Было: " + text));
-        layout.addView(createTextView("Стало: " + upper));
+        originalText.setText("Было: " + text);
+        upperText.setText("Стало: " + upper);
 
-        Button btn = new Button(this);
-        btn.setText("Назад");
-        btn.setTextSize(18);
-
-        btn.setOnClickListener(v -> {
+        backBtn.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.putExtra("result", "Ок");
             setResult(RESULT_OK, intent);
             finish();
         });
-
-        layout.addView(btn);
-        setContentView(layout);
-    }
-
-    private TextView createTextView(String text) {
-        TextView tv = new TextView(this);
-        tv.setText(text);
-        tv.setTextSize(18);
-        tv.setPadding(0, 20, 0, 20);
-        return tv;
     }
 
 

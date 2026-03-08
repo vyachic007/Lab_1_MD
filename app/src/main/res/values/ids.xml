@@ -6,4 +6,10 @@
     <item name="sendColorBtn" type="id"/>
     <item name="sendTextBtn" type="id"/>
     <item name="openLinkBtn" type="id"/>
+    <item name="coloredLayout" type="id" />
+    <item name="backBtn" type="id" />
+    <item name="mainLayout" type="id" />
+    <item name="originalText" type="id" />
+    <item name="upperText" type="id" />
+    <item name="backBtn" type="id" />
 </resources>

@@ -19,6 +19,8 @@ public class ColoredActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "ColoredActivity: onCreate");
 
+        setContentView(R.layout.activity_colored);
+
         int color = getIntent().getIntExtra("color", Color.GRAY);
         Log.d(TAG, "ColoredActivity: получен цвет = " + color);
 
@@ -29,27 +31,19 @@ public class ColoredActivity extends Activity {
         );
         Log.d(TAG, "ColoredActivity: инвертированный цвет = " + invertColor);
 
+        LinearLayout layout = findViewById(R.id.coloredLayout);
+        Button backBtn = findViewById(R.id.backBtn);
 
-        LinearLayout layout = new LinearLayout(this);
         layout.setBackgroundColor(color);
-        layout.setGravity(android.view.Gravity.CENTER);
+        backBtn.setBackgroundColor(invertColor);
+        backBtn.setTextColor(color);
 
-        Button btn = new Button(this);
-        btn.setText("Назад");
-        btn.setTextSize(18);
-        btn.setBackgroundColor(invertColor);
-        btn.setTextColor(color);
-
-
-        btn.setOnClickListener(v -> {
+        backBtn.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.putExtra("result", "Ок");
             setResult(RESULT_OK, intent);
             finish();
         });
-
-        layout.addView(btn);
-        setContentView(layout);
     }
 
     @Override
