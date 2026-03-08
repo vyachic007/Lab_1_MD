@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="authorsInfo" type="id" />
+    <item name="colorBtn" type="id"/>
+    <item name="switchCaseEdit" type="id"/>
+    <item name="sendColorBtn" type="id"/>
+    <item name="sendTextBtn" type="id"/>
+    <item name="openLinkBtn" type="id"/>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lab_1</string>
+    <string name="author_id">authorsInfo</string>
+    <string name="authors_name">Авторы: \nБорисов Вячеслав Вадимович\nБорисов Владислав Вадимович\nГруппа: 31ИВТ</string>
+    <string name="enterText">Введите текст</string>
+    <string name="sendText">Отправить текст</string>
+    <string name="sendColor">Отправить цвет</string>
+    <string name="generateColor">Сгенерировать цвет</string>
+    <string name="openLink">Открыть ссылку</string>
+</resources>
