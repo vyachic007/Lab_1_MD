@@ -11,4 +11,5 @@
     <item name="mainLayout" type="id" />
     <item name="originalText" type="id" />
     <item name="upperText" type="id" />
+    <item name="backBtn" type="id" />
 </resources>
